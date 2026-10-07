@@ -35,8 +35,7 @@ exactly three things those four packs don't have:
 Per this batch's tier assignment, this project got Phase 4 (codebase
 navigation) only — no ladder, no seeded incidents, no agentic/interview
 kit. No source files were edited; this tree, `training/`, is the only
-addition. See the batch report for verification notes and caveats:
-`C:\Users\Owner\Desktop\opusorganize\batch3report\projects\outline.md`.
+addition. The batch report with verification notes and caveats was kept outside this repository.
 
 ## Repo baseline
 
@@ -44,4 +43,9 @@ This repo had no `.git` when this pass started. A baseline snapshot was
 committed first (`chore: baseline snapshot before training`), respecting
 the existing `.gitignore` (no `node_modules`, no local `.env`/`.env.local`/
 `.env.production`). This `training/` tree was committed separately on top
-of that baseline. See the batch report for both commit hashes.
+of that baseline.
+
+*Status 2026-10-06:* in `elirc/masteroutline-outline` these are `37ca0d5`
+(baseline, which already includes the four `fabledocs*` trees) and `cca361b`
+(this `training/` tree). `learn/` was added later in `05f615f`, on the
+`training` branch only.

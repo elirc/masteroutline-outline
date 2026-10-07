@@ -49,6 +49,18 @@ Recommended entry points by profile:
 - **Drills and self-grading.** Most pages end with a drill and a Basic/Solid/Strong rubric. Grade yourself honestly; "Strong" descriptions are what a senior answer sounds like.
 - **Senior vocabulary.** Words like *invariant*, *boundary*, *contract*, *idempotency*, *isolation*, *blast radius* are used deliberately and defined in context the first time each module needs them. They are also interview vocabulary — using them precisely (and only where they apply) is a mid-level signal.
 
+## The other study trees in this repo
+
+This is the broadest of six AI-written study trees on the same snapshot, and none of the others is linked from here:
+
+- `fabledocs2/` — six narrative chapters (architecture, API design, data access, testing, error handling, observability).
+- `fabledocs3/` — ten ADRs (`adr-001` … `adr-010`) plus `interview-translation.md`.
+- `fabledocs4/` — practice: six fire drills, two capstones, an SQL concurrency lab, a MobX lab, 43 flashcards, a four-week plan.
+- `training/` — a call-by-call trace of the collaborative save path, an upstream-contribution kit, and verdicts on the four `fabledocs*` trees.
+- `learn/` — an 11-session route through all of the above, with on-ramp exercises and sealed answers in `learn/_answers/`.
+
+If you want one ordered path through everything, follow `learn/README.md`; it uses this tree for orientation and the code-reading gym.
+
 ## A note on repo rules
 
 This repo's own [AGENTS.md](../AGENTS.md) instructs contributors not to create new markdown files in the product tree — these docs exist as a self-contained learning suite in `fabledocs/` at the explicit request of the repo's local user, and nothing here modifies product code. Don't ship `fabledocs/` in a PR to upstream Outline.

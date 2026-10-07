@@ -20,7 +20,7 @@ missing collaboration harness, and the Redis-wears-five-hats topology.
 | [03-capstone-collab-harness.md](03-capstone-collab-harness.md) | Build the multi-client collaboration test harness — the testing strategy's standing IOU (ADR-010). | 2–3 days |
 | [04-sql-concurrency-lab.md](04-sql-concurrency-lab.md) | Reproduce the lock convoy with two psql sessions. `FOR UPDATE`, `SET LOCAL lock_timeout`, `SKIP LOCKED`, pool math. | half a day |
 | [05-frontend-mobx-lab.md](05-frontend-mobx-lab.md) | The `app/` tree hands-on: stores, models, shipped policies, and adding a feature end-to-end through the RPC convention. | half a day |
-| [06-flashcards.md](06-flashcards.md) | ~50 spaced-repetition cards covering fabledocs2 + fabledocs3. Question / answer format, import into Anki if you like. | ongoing |
+| [06-flashcards.md](06-flashcards.md) | 43 spaced-repetition cards covering fabledocs2 + fabledocs3. Question / answer format, import into Anki if you like. | ongoing |
 | [07-four-week-plan.md](07-four-week-plan.md) | A schedule that sequences all three packs plus this one into four weeks of ~90 min/day. | 4 weeks |
 
 ## Rules of engagement

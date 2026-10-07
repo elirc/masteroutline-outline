@@ -28,7 +28,7 @@ Then answer this: which of 3/4/5 would surprise a caller who writes `if (slug !=
 `describe` block that pins the **current** behaviour for inputs 3, 4 and 5 from E1. The rules:
 
 - Don't change `parseDocumentSlug.ts`. A characterization test records what the code does, not what you wish
-  it did ([curriculum 04](../../../opusorganize/apprenticeship/curriculum/04-characterization-tests.md)).
+  it did (curriculum 04, outside this repo).
 - Put the test in the existing collocated file. `AGENTS.md` says "Do not create new test directories".
 - In a comment, name one real caller that is protected by its own guard, and say what that guard is. Find the
   callers with `grep -rn "parseDocumentSlug(" app server`.

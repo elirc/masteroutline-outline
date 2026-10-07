@@ -11,7 +11,7 @@ Rule zero: **measure first**. This repo already collects the measurements — kn
 - **Unbounded queries:** everything user-facing goes through [pagination()](../../server/routes/api/middlewares/pagination.ts) — a route without it returning arrays is a review flag. Note the count-skipping optimization for client requests (L21–47): COUNT on big tables is itself a cost.
 
 ### 2. Server CPU (Node's special vulnerability)
-Single thread ⇒ sync hotspots are outages, not slowdowns. Known heavy paths: ProseMirror JSON↔Markdown/HTML conversions ([DocumentHelper](../../server/models/helpers/DocumentHelper.ts)), export zips, email rendering. The repo's mitigation: push them to workers (ExportTasks, EmailsProcessor). Review rule: new sync transforms on request paths need a size bound or a queue.
+Single thread ⇒ sync hotspots are outages, not slowdowns. Known heavy paths: ProseMirror JSON↔Markdown/HTML conversions ([DocumentHelper](../../server/models/helpers/DocumentHelper.tsx)), export zips, email rendering. The repo's mitigation: push them to workers (ExportTasks, EmailsProcessor). Review rule: new sync transforms on request paths need a size bound or a queue.
 
 ### 3. Realtime fan-out
 Cost scales with (edits × subscribers × open tabs). The debounce processor and the per-room emission model are the mitigations; the metric to watch is websockets queue depth and delivery latency.

@@ -12,7 +12,8 @@ Every drill has the same loop:
 3. **You** review it adversarially, using the checklist at the bottom and then the rubric in
    `learn/_answers/01-agentic-practice.md`. Record how many findings you caught before you opened the rubric.
 4. Throw the scratch branch away (`git switch training && git branch -D scratch/dN`). Only D1 and D3 ever
-   become a real upstream PR, and only through `training/navigation/04-upstream-pr-dry-run.md`.
+   become a real upstream PR, and only after the first-PR checklist in
+   `training/navigation/02-upstream-contribution-kit.md` (the planned `04-upstream-pr-dry-run.md` is not in this repository).
 
 ---
 
@@ -68,7 +69,7 @@ Spec a **one-line** change. Name the three things the agent is likely to do that
 - "improving" `Facepile` or the avatars while it's in there.
 
 **Verification [needs stack]:** with a screen reader or the browser's accessibility tree, the trigger reads as
-"Viewers, button". [Curriculum 11](../../../opusorganize/apprenticeship/curriculum/11-accessibility-essentials.md)
+"Viewers, button". Curriculum 11 (outside this repo)
 covers how to check an accessible name.
 
 ## D4 — Fire drill 6 → a static guard for `shared/` (60 min)

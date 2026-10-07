@@ -6,7 +6,7 @@ deliberately short — if you can't expand any answer to 60 spoken seconds,
 that's a signal to reread the source doc (cited per group).
 
 Cadence that works: all cards once, then daily misses only, then every few
-days. ~50 cards ≈ 25 minutes cold, <10 warm.
+days. 43 cards ≈ 20 minutes cold, <10 warm.
 
 ---
 

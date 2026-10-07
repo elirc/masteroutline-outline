@@ -64,6 +64,14 @@ Further targeted reads/greps made while writing individual pages are noted inlin
 - No plugin code was read in depth (`plugins/*`) except directory listings; claims about specific plugins are labeled inferred.
 - Runtime behavior of the collaboration (Hocuspocus) service is described from code reading only.
 
+## 2026-10-06 accuracy pass
+
+Static re-check against `elirc/masteroutline-outline` (branch `training`, commit `05f615f`); nothing was installed or run.
+
+- All relative Markdown links in `fabledocs*/`, `learn/` and `training/` resolve, and every `#Lx-Ly` anchor is within its file. One link in `05-quality-engineering/04-performance-thinking.md` pointed at `DocumentHelper.ts`; the file is `server/models/helpers/DocumentHelper.tsx`.
+- `learn/` linked an apprenticeship curriculum outside this repository and a `training/navigation/04-upstream-pr-dry-run.md` that was never committed; those references are now marked as external or missing.
+- Spot-read and still accurate: `documents.info` at `server/routes/api/documents/documents.ts:573`, `Event.schedule` at `server/models/Event.ts:140`, `dev:watch` at `package.json:15`, the CI `postgres:14.2` service, and the `ioredis` mock in `server/test/setupMocks.ts:37`.
+
 ## Known uncertainties
 
 - Exact behavior of `documents.update.debounced` event scheduling (DebounceProcessor was not read in full) — flagged where mentioned.

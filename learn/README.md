@@ -1,8 +1,10 @@
 # learn/ — How to study Outline as a junior (B08)
 
 > Local study material only. `AGENTS.md` says "Critical – Do not create new markdown (.md) files", so
-> `learn/`, `training/` and `fabledocs*/` must **never** appear in an upstream PR. They live on the local
-> `training` branch.
+> `learn/`, `training/` and `fabledocs*/` must **never** appear in an upstream PR. In
+> `elirc/masteroutline-outline`, `training` is the default branch and holds all of them; `master` has
+> `fabledocs*/` and `training/` but not `learn/`. Either way, branch off upstream Outline, not this
+> repository, when you prepare a real PR.
 
 ## What this app is and why it's in the portfolio
 
@@ -15,21 +17,24 @@ size (2,600+ files) you can't hold in your head. Second, it is where your **firs
 (`fabledocs/`, `fabledocs2/`, `fabledocs3/`, `fabledocs4/`). This folder tells you the order to use them in, and
 what to do by hand versus what to hand to a coding agent.
 
-**Runtime status on this machine (2026-09-26):** `node_modules` is absent, so run `yarn install` first. The dev
-stack needs Postgres + Redis (`docker-compose.yml`), and **Docker is currently down** (the WSL distro is gone).
-Every step below marked **[needs stack]** has to wait until Docker works. Everything else is reading and writing,
-and you can do it today.
+**Runtime status when written (2026-09-26):** `node_modules` is not committed, so run `yarn install` first. The
+dev stack needs Postgres + Redis (`docker-compose.yml`); on the author's machine Docker was unavailable at the
+time. Every step below marked **[needs stack]** needs that stack running. Everything else is reading and
+writing, and you can do it without one.
 
 ## Prerequisites (do these first)
 
+The "curriculum NN" entries name chapters of a separate apprenticeship curriculum that is **not in this
+repository**. If you don't have it, the second half of each row (the fabledocs reading) still covers the idea.
+
 | # | Fundamental | Read |
 |---|---|---|
-| 1 | CRDTs: why a Y.Doc merges without conflicts, and state vs projections | [curriculum 17 — CRDTs & offline sync](../../../opusorganize/apprenticeship/curriculum/17-crdt-offline-sync.md), then `fabledocs2/README.md` "ground rules" (rule 5) |
-| 2 | Commit-then-publish gaps (why an event can be lost after the DB commits) | [curriculum 01 — transactional outbox](../../../opusorganize/apprenticeship/curriculum/01-transactional-outbox.md), then `fabledocs3/adr-006-event-spine.md` |
-| 3 | Row locks and lock timeouts | [curriculum 03 — concurrency races](../../../opusorganize/apprenticeship/curriculum/03-concurrency-races.md) (the locking half), then `fabledocs4/04-sql-concurrency-lab.md` Experiment 1 (read it even if you can't run it) |
-| 4 | Telemetry that lies by omission | [curriculum 09 — telemetry you can trust](../../../opusorganize/apprenticeship/curriculum/09-telemetry-correctness.md) (needed for upstream candidate C) |
-| 5 | Pinning current behaviour before you change it | [curriculum 04 — characterization tests](../../../opusorganize/apprenticeship/curriculum/04-characterization-tests.md) (needed for candidate B and on-ramp E2) |
-| 6 | Verifying code you didn't write | [curriculum 05 — verify before trust](../../../opusorganize/apprenticeship/curriculum/05-verify-before-trust.md) and [curriculum 11 — accessibility](../../../opusorganize/apprenticeship/curriculum/11-accessibility-essentials.md) (candidate A) |
+| 1 | CRDTs: why a Y.Doc merges without conflicts, and state vs projections | curriculum 17 — CRDTs & offline sync (outside this repo), then `fabledocs2/README.md` "ground rules" (rule 5) |
+| 2 | Commit-then-publish gaps (why an event can be lost after the DB commits) | curriculum 01 — transactional outbox (outside this repo), then `fabledocs3/adr-006-event-spine.md` |
+| 3 | Row locks and lock timeouts | curriculum 03 — concurrency races (outside this repo) (the locking half), then `fabledocs4/04-sql-concurrency-lab.md` Experiment 1 (read it even if you can't run it) |
+| 4 | Telemetry that lies by omission | curriculum 09 — telemetry you can trust (outside this repo) (needed for upstream candidate C) |
+| 5 | Pinning current behaviour before you change it | curriculum 04 — characterization tests (outside this repo) (needed for candidate B and on-ramp E2) |
+| 6 | Verifying code you didn't write | curriculum 05 — verify before trust (outside this repo) and curriculum 11 — accessibility (outside this repo) (candidate A) |
 
 ## Study route (11 sessions, ~12 h)
 
@@ -48,7 +53,7 @@ did against the exit criterion.
 | 8 | **Fire drills, round 2** (60 min) | Drills 1, 3, 4, 6 (at least two of them) | Same no-peeking rules | Agentic drill **D4** (static guard for `shared/`) | For each drill: one prevention you'd actually ship, with the file it would live in |
 | 9 | **Upstream kit** (60 min) | `training/navigation/02-upstream-contribution-kit.md` §4, then `training/_answers/02-change-candidates-answers.md` | Do all 3 placement exercises before opening the answers | none | For each candidate you wrote file, test, and "what CI wouldn't catch", and graded yourself against the sealed answer |
 | 10 | **Direct an agent on a real candidate** (90 min) | `learn/01-agentic-practice.md` D1 (test for `DocumentUpdateTextTask`) and D3 (aria-label) | Write the spec. Do the adversarial review | Implementation | **[needs stack]** `yarn test server/queues/tasks/DocumentUpdateTextTask.test.ts` is green, and every checklist item is ticked. Until the stack runs: a review against the D1 rubric with 0 unresolved findings |
-| 11 | **PR dry run → real PR** (90 min) | `training/navigation/04-upstream-pr-dry-run.md` (new in B08) | Check the candidate against live upstream issues. Write the issue + PR description yourself | Nothing. Your name goes on it | A PR description that passes the dry-run rubric. Stretch: a real PR opened on github.com/outline/outline |
+| 11 | **PR dry run → real PR** (90 min) | `training/navigation/02-upstream-contribution-kit.md` §3 (first-PR checklist). A separate `04-upstream-pr-dry-run.md` was planned but is not in this repository | Check the candidate against live upstream issues. Write the issue + PR description yourself | Nothing. Your name goes on it | A PR description that passes the dry-run rubric. Stretch: a real PR opened on github.com/outline/outline |
 
 **After the route (optional, multi-day, [needs stack]):** `fabledocs4/03-capstone-collab-harness.md` (build the
 multi-client harness for the path you traced in session 5) and `fabledocs4/04-sql-concurrency-lab.md`.
